@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Product Management</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="container">
+    <h1>Product Management</h1>
+
+    <!-- Search Bar -->
+    <div class="search-bar">
+      <input
+        type="text"
+        id="searchInput"
+        placeholder="Search products by name or category..."
+        oninput="filterProducts()"
+      />
+    </div>
+
+    <!-- Add/Edit Form -->
+    <form id="productForm" onsubmit="handleForm(event)">
+      <h2 id="formTitle">Add Product</h2>
+      <input type="text" id="productName" placeholder="Product Name" required />
+      <input type="text" id="productCategory" placeholder="Category" required />
+      <textarea id="productDescription" placeholder="Description" required></textarea>
+      <input type="number" id="stockLevel" placeholder="Stock Level" required />
+      <input type="number" id="reorderPoint" placeholder="Reorder Point" required />
+      <input type="text" id="supplierName" placeholder="Supplier Name" required />
+      <input type="file" id="productImage" accept="image/*" />
+      <button type="submit">Submit</button>
+    </form>
+
+    <!-- Product Table -->
+    <table id="productTable">
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Category</th>
+          <th>Description</th>
+          <th>Stock Level</th>
+          <th>Reorder Point</th>
+          <th>Supplier</th>
+          <th>Image</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <!-- Product rows will go here -->
+      </tbody>
+    </table>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
